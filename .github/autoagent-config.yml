@@ -4,8 +4,8 @@
 # this file with yq and exports the values as environment variables.
 
 github:
-  organization: "Vtrgp"                          # org or user that owns the Projects V2 board
-  repository: "Vtrgp/link-shortener"            # full OWNER/NAME
+  organization: "vtrgp-labs"                     # org or user that owns the Projects V2 board
+  repository: "vtrgp-labs/link-shortener"       # full OWNER/NAME
   project_number: 1                              # Projects V2 board number
 
 board:
