@@ -33,8 +33,8 @@ jobs:
           # Route github.head_ref through env to avoid script injection via branch name.
           BRANCH: ${{ github.head_ref }}
         run: |
-          # Extract issue number from branch name: autoagent/353-wire-categorization-rules → 353
-          ISSUE_NUM=$(echo "$BRANCH" | sed "s|${AUTOAGENT_BRANCH_PREFIX}||" | grep -oE '^[0-9]+')
+          # Extract issue number from branch name: autoagent/plan-3-slug or autoagent/3-slug → 3
+          ISSUE_NUM=$(echo "$BRANCH" | sed "s|${AUTOAGENT_BRANCH_PREFIX}||" | sed 's|^plan-||' | grep -oE '^[0-9]+')
           echo "number=$ISSUE_NUM" >> "$GITHUB_OUTPUT"
           echo "Issue: #$ISSUE_NUM from branch: $BRANCH"
 
